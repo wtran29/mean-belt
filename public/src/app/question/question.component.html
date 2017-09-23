@@ -1,0 +1,18 @@
+<a href='#'(click)="">Home</a>
+
+
+<h1>New Question</h1>
+<form (submit)="addQues()">
+<label>Question</label>
+<input type="textarea" name="question" cols="20" rows="20"
+	required
+	minlength="10"
+	[(ngModel)]="newQues.question"
+	#question = "ngModel">
+	<div *ngIf="!question.valid">Question needs to be at least 10 characters.</div>
+<input type="textarea" name="description"  cols="20" rows="20"
+	[(ngModel)]="newQues.description" 
+	#description = "ngModel">
+
+<button>Cancel</button> <input type="submit" name="submit" value="Submit">
+</form>

@@ -1,0 +1,24 @@
+<h1>Hi {{user.name}}!</h1>
+<section>
+<a href='#'(click)="logoutUser()">Log off</a>
+<a href='#'(click)="gotoQues()">Add a question</a> 
+<!-- i think i was suppose to use routerLink?? -->
+</section>
+Search: <input type="text" name="search"
+	[(ngModel)]="searchTerm"
+	#search = "ngModel"
+	(keyup)="searchExams()">
+<table>
+	<tr>
+		<td>Question</td>
+		<td>Answers</td>
+		<td>Action</td>
+	</tr>
+	<tr>
+		<td>{{ques.question}}</td>
+		<td>{{count.answer}}</td>
+		<td><a href='#'(click)="gotoShow()">Show</a><a href='#'(click)="gotoAnswer()">Answer</a></td>
+		<!-- i think i was suppose to use routerLink?? -->
+	</tr>
+</table>
+<router-outlet></router-outlet>

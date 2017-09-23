@@ -1,0 +1,14 @@
+<h1>Q&amp;A</h1>
+
+		<form (submit)="login()">
+			<label>Name: </label>
+			<input type="text" name="name"
+				required
+				[(ngModel)]="user.name"
+				#name = "ngModel">
+			<div *ngIf="!name.valid">Invalid name.</div>
+			
+			<input type="submit" name="submit" value="Enter">
+		</form>
+	
+
